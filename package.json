@@ -48,7 +48,7 @@
   "devDependencies": {
     "code": "4.0.x",
     "coveralls": "2.11.x",
-    "eslint": "3.12.x",
+    "eslint": "~3.12.2",
     "hemera-testsuite": "1.0.x",
     "istanbul": "0.4.x",
     "memwatch-next": "0.3.x",
