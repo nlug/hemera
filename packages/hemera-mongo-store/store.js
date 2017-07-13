@@ -144,7 +144,7 @@ class MongoStore extends Store {
    */
   find (req, options, cb) {
     let cursor = this._driver.find(req.query)
-
+    const total = cursor.count();
     if (options) {
       if (options.limit) {
         cursor = cursor.limit(options.limit)
@@ -164,7 +164,8 @@ class MongoStore extends Store {
         return cb(err)
       }
       const result = Object.assign({
-        result: resp
+        result: resp,
+        total: total
       }, options)
       cb(err, result)
     })
